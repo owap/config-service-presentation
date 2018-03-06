@@ -1,0 +1,10 @@
+title UI Config Workflow
+
+User->UI: Navigate to app
+UI->Config Service: Request initial assets
+Config Service->UI: API Endpoints, Auth Info, App-level options, Branding
+UI->User: Render login page
+User->UI: Log in
+UI->Config Service: Request complete assets
+Config Service->UI: Feature toggles
+UI->User: Render full application

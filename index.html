@@ -1,22 +1,88 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
-    <title>big</title>
-    <link href='big.css' rel='stylesheet' type='text/css' />
-    <link href='highlight.css' rel='stylesheet' type='text/css' />
-    <style>
-.new-shiny { background: #aaaaaa; }
-    </style>
-    <script src='big.js'></script>
-    <script src='highlight.js'></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-  </head>
-  <body class='light'>
-    <div>
-      Config for the UI
-    </div>
-    <div data-background-image='./table.png'/>
-  </body>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+  <title>big</title>
+  <link href='big.css' rel='stylesheet' type='text/css' />
+  <link href='highlight.css' rel='stylesheet' type='text/css' />
+  <style>
+    .new-shiny { background: #aaaaaa; }
+  </style>
+  <script src='big.js'></script>
+  <script src='highlight.js'></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class='light'>
+  <div><p>Config for the UI</p>
+</div>
+<div><p><em>API Endpoints</em></p>
+<ul>
+<li>&quot;Where does my data come from?&quot;</li>
+<li>Static per environment</li>
+<li>Can store values in SSM</li>
+</ul>
+</div>
+<div data-background-image='./table.png'></div>
+<div><p><em>Auth Info</em></p>
+<ul>
+<li>Client pool / id</li>
+<li>Static per environment</li>
+<li>Can store values in SSM</li>
+</ul>
+</div>
+<div><p><em>Application Options</em></p>
+<ul>
+<li>List of Sensors</li>
+<li>Basemaps</li>
+<li>min/max Map zoom</li>
+<li>etc.</li>
+</ul>
+</div>
+<div><p><em>Branding</em></p>
+<ul>
+<li>Background image</li>
+<li>Title bar logo / text</li>
+<li>Per-app branding (Inmarsat demo)</li>
+<li>Per-org branding(?)</li>
+</ul>
+</div>
+<div><p><em>Feature Toggles</em> AKA <em>App-specific permissions</em></p>
+<ul>
+<li>A/B Testing</li>
+<li>What apps can this user use? <ul>
+<li>SSO Homepage</li>
+<li>Channels &rarr; EventExplorer?</li>
+</ul>
+</li>
+</ul>
+</div>
+<div><p><em>Proposal:</em><br/> UI Config Service</p>
+</div>
+<div><ul>
+<li>Dockerized</li>
+<li>Lives in the fe cluster</li>
+<li>Uses AWS SDK for talking to s3 and SSM</li>
+</ul>
+</div>
+<div><p><em>Public Endpoints</em></p>
+<ul>
+<li>Get config for initial app load</li>
+<li>Get full configs for authenticated users</li>
+<li>[FUTURE] Access limited UI for select power-users (Apex)</li>
+</ul>
+</div>
+<div><p><em>Private Endpoints</em> (VPN-only)</p>
+<ul>
+<li>Access full UI for customizing config values</li>
+</ul>
+</div>
+<div data-background-image='./table.png'></div>
+<div data-background-image='./seq-diag.png'></div>
+<div data-background-image='./onion.png'></div>
+<div><p>We will make sure the UI indicates very clearly which fields have their default values, and which fields are being overwritten at the app, org, and user levels. </p>
+</div>
+<div><p>Fight me</p>
+</div>
+</body>
 </html>
